@@ -1,7 +1,8 @@
-# Hi, I'm Uba Chan 👋
 <p align="center">
   <img src="banner.png" alt="Uba Chan Banner" width="100%">
 </p>
+
+# Hi, I'm Uba Chan 👋
 
 ### AI Automation Expert | Vibe Coder | SaaS Builder
 
