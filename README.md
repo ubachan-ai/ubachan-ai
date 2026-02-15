@@ -32,7 +32,6 @@ Helping businesses scale through intelligent workflows, custom AI agents, and se
 | **Specialized Tools** | ![Lovable](https://img.shields.io/badge/Lovable-FF00FF?style=flat) |
 
 ---
----
 
 ## 🌟 Featured AI Automation Projects
 
@@ -40,43 +39,42 @@ Helping businesses scale through intelligent workflows, custom AI agents, and se
 *An AI-powered operating studio designed specifically for solo creators to automate their content ecosystem.*
 - **Core Tech:** ![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=flat&logo=n8n) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase) ![Lovable](https://img.shields.io/badge/Lovable-FF00FF?style=flat)
 - **Key Features:** Automates content planning, scheduling, and distribution workflows.
-- **Status:** [Live Demo](https://ureatorflow.framer.ai/) | [Source Code](#)
+- **Status:** [Live Demo](https://ureatorflow.pages.dev/)
 
 ---
 
 ### 📸 2. NBGC - Next-Gen Content (Photos to UGC Ads)
 *A high-efficiency automation pipeline that transforms raw product photos into high-converting UGC ads using AI.*
 - **Core Tech:** ![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=flat&logo=n8n) ![Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=flat&logo=googlegemini) ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=cloudflare)
-- **The Workflow:**
+
 ```mermaid
 graph LR
   A[Raw Photo] --> B[Gemini Vision AI]
   B --> C[Ad Copy & Design]
   C --> D[UGC Asset Ready]
   style B fill:#8E75B2,color:#fff
-​Impact: Automated asset creation for marketing agencies.
-​Status: Live Demo | Source Code
 
----
-
-###​🧠 3. Agentic RAG Workflow - Intelligent Knowledge Base
-​An advanced AI Agent system that understands user intent and retrieves contextually relevant information from custom databases using Vector Search.
-​Core Tech:
-​The Workflow:
-​<!-- end list -->
+ * Impact: Automated asset creation for marketing agencies.
+ * Status: Live Demo | Source Code
+🧠 3. Agentic RAG Workflow - Intelligent Knowledge Base
+An advanced AI Agent system that understands user intent and retrieves contextually relevant information from custom databases using Vector Search.
+ * Core Tech:
+<!-- end list -->
 graph TD
-  User((fa:fa-user Query)) --> Hook[fa:fa-link n8n Webhook]
-  Hook --> Embed[fa:fa-brain Embedding]
-  Embed --> Search{fa:fa-search Vector Search}
-  Search -- Query --> PDB[(fa:fa-database Pinecone/MongoDB)]
-  PDB -- Context --> AI[fa:fa-microchip AI Model: Groq/Anthropic]
-  AI --> Result[fa:fa-check Synthesized Answer]
-  Result --> Response[fa:fa-paper-plane Response]
+  User((User Query)) --> Hook[n8n Webhook]
+  Hook --> Embed[Embedding]
+  Embed --> Search{Vector Search}
+  Search -- Query --> PDB[(Pinecone/MongoDB)]
+  PDB -- Context --> AI[AI Model]
+  AI --> Result[Synthesized Answer]
+  Result --> Response[Response]
 
-  style Search fill:#f9f,stroke:#333,stroke-width:2px
+  style Search fill:#f9f,stroke:#333
   style PDB fill:#27272e,stroke:#fff,color:#fff
-​Key Features: Intent recognition, dynamic context retrieval, and low-latency AI responses using Groq.
-​Use Case: Custom AI chatbots for businesses that need to talk to their own data.
+
+ * Key Features: Intent recognition, dynamic context retrieval, and low-latency AI responses.
+ * Use Case: Custom AI chatbots for businesses that need to talk to their own data.
+
 ---
 
 ### 📊 GitHub Stats
