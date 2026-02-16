@@ -84,10 +84,10 @@ graph TD
 
 ---
 
-### 💬 4. AI Sales Agent - Multi-Modal & Real-Time
-*An autonomous omni-channel sales agent capable of processing voice, images, and text to manage orders and inventory.*
+### 🤖 4. AI Sales Agent - Omni-Channel Automation
+*An autonomous, multi-modal **AI Sales Agent** designed for Facebook Messenger. This agent handles the entire sales lifecycle—from product inquiries (text, voice, image) to inventory checking, fraud detection, and order placement—while maintaining a seamless human handoff protocol.*
 
-- **Core Tech:** ![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=flat&logo=n8n&logoColor=white) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white) ![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=flat&logo=googlegemini&logoColor=white) ![Pinecone](https://img.shields.io/badge/Pinecone-27272E?style=flat) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white) ![Google Sheets](https://img.shields.io/badge/Google_Sheets-34A853?style=flat&logo=googlesheets&logoColor=white)
+- **Core Tech:** ![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=for-the-badge&logo=n8n&logoColor=white) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white) ![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) ![Pinecone](https://img.shields.io/badge/Pinecone-27272E?style=for-the-badge&logo=pinecone&logoColor=white)
 
 ```mermaid
 graph TD
@@ -118,7 +118,8 @@ graph TD
   style Agent fill:#FF6D5A,color:#fff,stroke:#fff
   style Tools fill:#2D3B45,color:#fff,stroke:#fff
 
-  ```
+```
+---
 
 ### 🚀 Key Features
 
@@ -126,7 +127,7 @@ graph TD
 - **📦 Smart Order Management:** Checks stock in **Google Sheets**, verifies user history via **BD Courier API**, and places orders automatically.
 - **🧠 RAG & Context:** Retrieves knowledge from **Pinecone** and maintains long-term conversation history via **Postgres**.
 - **🤝 Human Handoff:** Automatically transfers chat to a human agent via **Supabase** logic when needed.
-- **🔗 Status:** [Live Demo](#) | [Source Code](#)
+- **🔗 Status:**  [Source Code](https://github.com/ubachan/AI-Sales-Agent-Omni-Channel-Automation.git)
 
 ---
 
