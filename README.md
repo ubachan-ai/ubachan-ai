@@ -142,7 +142,7 @@ graph TD
 ### 📊 GitHub Stats
 
   ![Uba's GitHub Stats](https://github-readme-stats-eight-theta.vercel.app/api?username=ubachan&show_icons=true&theme=radical&hide_border=true)
-  <img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=ubachan&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
+  `<img src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=ubachan&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />`
 
 ---
 
