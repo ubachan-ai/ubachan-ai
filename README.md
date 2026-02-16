@@ -102,7 +102,7 @@ graph TD
   Audio --> Agent
   Token --> Agent
   
-  Agent["🤖 AI Sales Agen (RAG)"]
+  Agent["🤖 AI Sales Agent (RAG)"]
   
   subgraph Tools [Agent Tools & Memory]
     direction TB
