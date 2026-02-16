@@ -42,7 +42,6 @@ Helping businesses scale through intelligent workflows, custom AI agents, and se
 - **Status:** [Live Demo](https://ureatorflow.pages.dev/)
 
 ---
-
 ### 📸 2. NBGC - Next-Gen Content (Photos to UGC Ads)
 *A high-efficiency automation pipeline that transforms raw product photos into high-converting UGC ads using AI.*
 
@@ -54,6 +53,36 @@ graph LR
   B --> C[Ad Copy & Design]
   C --> D[UGC Asset Ready]
   style B fill:#8E75B2,color:#fff
+```
+- **Impact:** Automated asset creation for marketing agencies.
+
+- **Status:** [Live Demo](https://nbgc.pages.dev/) 
+
+---
+### 🧠 3. Agentic RAG Workflow - Intelligent Knowledge Base
+*An advanced AI Agent system that understands user intent and retrieves contextually relevant information from custom databases using Vector Search.*
+
+- **Core Tech:**
+
+```mermaid
+graph TD
+  User((User Query)) --> Hook[n8n Webhook]
+  Hook --> Embed[Embedding]
+  Embed --> Search{Vector Search}
+  Search -- Query --> PDB[(Pinecone/MongoDB)]
+  PDB -- Context --> AI[AI Model]
+  AI --> Result[Synthesized Answer]
+  Result --> Response[Response]
+
+  style Search fill:#f9f,stroke:#333
+  style PDB fill:#27272e,stroke:#fff,color:#fff
+```
+
+- **Key Features:** Intent recognition, dynamic context retrieval, and low-latency AI responses.
+
+- **Use Case:** Custom AI chatbots for businesses that need to talk to their own data.
+
+
 ---
 
 ### 📊 GitHub Stats
@@ -65,5 +94,5 @@ graph LR
 ---
 
 ### 🤝 Connect with Me
-[LinkedIn](https://linkedin.com/in/uba-chan) |  | [Twitter](https://twitter.com/ubachan)
+[LinkedIn](https://linkedin.com/in/uba-chan) |  | [Twitter](https://twitter.com/ubachan_)
 
