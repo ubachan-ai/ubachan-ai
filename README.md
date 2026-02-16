@@ -84,7 +84,7 @@ graph TD
 
 ---
 
-#### 💬 4. AI Sales Agent - Multi-Modal & Real-Time
+### 💬 4. AI Sales Agent - Multi-Modal & Real-Time
 *An autonomous omni-channel sales agent capable of processing voice, images, and text to manage orders and inventory.*
 
 - **Core Tech:** ![n8n](https://img.shields.io/badge/n8n-FF6D5A?style=flat&logo=n8n&logoColor=white) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white) ![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=flat&logo=googlegemini&logoColor=white) ![Pinecone](https://img.shields.io/badge/Pinecone-27272E?style=flat) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white) ![Google Sheets](https://img.shields.io/badge/Google_Sheets-34A853?style=flat&logo=googlesheets&logoColor=white)
