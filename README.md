@@ -4,7 +4,7 @@
 
 # Hi, I'm Uba Chan 👋
 
-### AI Automation Expert | Vibe Coder | SaaS Builder
+### AI Automation Engineer | Vibe Coder
 
 Helping businesses scale through intelligent workflows, custom AI agents, and seamless integrations. I specialize in turning complex manual processes into efficient, automated systems.
 
