@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.png" alt="Uba Chan Banner" width="100%">
+<img width="4950" height="1238" alt="Untitled (New LinkedIn Banner) (2)" src="https://github.com/user-attachments/assets/1454fa7e-f333-45fc-a6f5-3345c32f3ae4" />
 </p>
 
 # Hi, I'm Uba Chan 👋
@@ -16,7 +16,7 @@ Helping businesses scale through intelligent workflows, custom AI agents, and se
 - 🌱 **I’m currently learning:** Advanced Multi-Agent Orchestration and scaling SaaS with **Lovable** & **n8n**.
 - 👯 **I’m looking to collaborate on:** Open-source AI automation workflows and innovative SaaS projects.
 - 💬 **Ask me about:** **n8n** automation, AI Agents, **Supabase** integration, and building a SaaS portfolio.
-- 📫 **How to reach me:** [LinkedIn](https://www.linkedin.com/in/uba-chan) , [Mail](mailto:ubachan2025@gmail.com) or [WhatsApp](https://wa.me/8801847791609)
+- 📫 **How to reach me:** [LinkedIn](https://www.linkedin.com/in/ubachan) , [Mail](mailto:aivibe@ubachan.com) or [WhatsApp](https://wa.me/8801847791609)
 - ⚡ **Fun fact:** I don't just write code! I code the vibe. ✨
 
 ---
