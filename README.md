@@ -17,7 +17,7 @@ Law firms chasing client intake. E-commerce brands checking payments manually. C
 | Area | What it means in practice |
 | :--- | :--- |
 | **🤖 Custom AI Agents & Chatbots** | Context-aware systems for lead gen, client support, and decision-making — running 24/7 |
-| **⚡ Workflow Automation** | n8n and Zapier pipelines that connect your tools and kill repetitive tasks |
+| **⚡ Workflow Automation** | n8n and Zapier pipelines that connect your tools and eliminate repetitive tasks |
 | **🔗 CRM Integration** | Pipelines that keep deals moving without someone pushing them |
 | **🌐 Web & SaaS Development** | Production-ready products built around automation from day one |
 | **🗄️ Database & Backend** | Supabase architecture built for scale and real-time performance |
@@ -30,50 +30,11 @@ Law firms chasing client intake. E-commerce brands checking payments manually. C
 
 ---
 
-## Currently
-
-- 🔨 **Building:** [UreatorFlow](https://ureatorflow.pages.dev/) — AI operating studio for solo creators. And [NBGC](https://nbgc.pages.dev/) — turns raw product photos into UGC ads.
-- 📚 **Learning:** Multi-Agent Orchestration and scaling SaaS with n8n + Supabase
-- 🤝 **Open to:** Freelance projects, open-source automation collaboration
-- 💬 **Ask me about:** n8n, AI Agents, Supabase, CRM integrations, Telegram bots
-
----
-
 ## Projects
 
-### 1. AI Vibe — Client Intake Automation
-A consultation form that sends personalized emails automatically. When a client submits their request, an AI Agent reads it, writes a tailored reply based on their service interest, and Gmail delivers it within seconds.
+### 1. AI Sales Agent — Omni-Channel Facebook Messenger Automation
 
-**Stack:** n8n · Google Gemini · Google Sheets · Gmail · Structured Output Parser
-
-**Repo:** [AI-Vibe-Client-Intake-Automation](https://github.com/ubachan/AI-Vibe-Client-Intake-Automation)
-
----
-
-### 2. Zero Website Order Flow — DM to Delivered
-A full order management system for businesses selling through Instagram DMs. No Shopify. No website. Customers submit orders through a form, payment screenshots upload to Google Drive, fraud detection runs automatically, and the owner approves or rejects from Telegram in one tap.
-
-**Results:** 40hrs/week → 2hrs · 12 fake orders/week → 0 · 25,430+ orders processed · 99.1% verification rate
-
-**Stack:** n8n · Airtable · Google Drive · Google Sheets · Gmail · Telegram Bot
-
-```mermaid
-graph LR
-  A[Order Form] --> B[Validate & Normalize]
-  B --> C[Payment Screenshot → Drive]
-  C --> D[Duplicate Check]
-  D --> E[Fraud Detection]
-  E -->|Clean| F[Log to Sheets + Notify Customer]
-  E -->|Flagged| G[Fraud Alert → Telegram]
-  F --> H[Owner Approves via Telegram]
-  H -->|Approve| I[Confirmation Email + Telegram]
-  H -->|Reject| J[Rejection Email + Telegram]
-```
-
----
-
-### 3. AI Sales Agent — Omni-Channel Facebook Messenger
-An autonomous sales agent for Facebook Messenger that handles the entire sales flow — product questions via text, voice, or photo — through to inventory checking, fraud detection, and order placement. Hands off to a human when things get complex.
+An autonomous sales agent for Facebook Messenger that handles the full sales cycle — product questions via text, voice, or photo — through to inventory checking, fraud detection, and order placement. Transfers to a human agent when the situation needs it.
 
 **Stack:** n8n · OpenAI · Google Gemini · Supabase · Pinecone · Postgres
 
@@ -107,41 +68,150 @@ graph TD
   style Tools fill:#2D3B45,color:#fff,stroke:#fff
 ```
 
+**Key Features:**
+- Gemini Vision identifies products from customer photos
+- OpenAI Whisper transcribes and understands voice notes in real time
+- Real-time inventory sync with Google Sheets — checks stock before confirming
+- BD Courier API fraud scoring on COD orders before acceptance
+- Pinecone vector DB for FAQ and policy retrieval
+- Postgres memory keeps conversation context across sessions
+- Supabase-triggered human handoff when complex support is needed
+
 **Repo:** [AI-Sales-Agent-Omni-Channel-Automation](https://github.com/ubachan/AI-Sales-Agent-Omni-Channel-Automation.git)
 
 ---
 
-### 4. Agentic RAG — Intelligent Knowledge Base
-An AI agent that retrieves contextually relevant answers from a custom database using vector search. Built for businesses that need a chatbot that talks to their own data, not generic internet knowledge.
+### 2. From DM to Delivered — Zero Website Order Flow
+
+A full order management system for businesses selling through Instagram or Facebook DMs. No Shopify. No website. Customers submit orders through a form, payment screenshots upload to Google Drive automatically, fraud detection runs, and the owner approves or rejects from Telegram in one tap.
+
+**Results:** 40hrs/week → 2hrs &nbsp;·&nbsp; 12 fake orders/week → 0 &nbsp;·&nbsp; 25,430+ orders processed &nbsp;·&nbsp; 99.1% verification rate &nbsp;·&nbsp; <1.5s response time
+
+**Stack:** n8n · Airtable · Google Drive · Google Sheets · Gmail · Telegram Bot
+
+```mermaid
+graph TD
+  A[Customer Order Form] --> B[Validate & Normalize Order]
+  B --> C[Payment Screenshot → Google Drive]
+  C --> D[Attach Screenshot URL]
+  D --> E[Duplicate Data Check]
+  E --> F[Fraud Detection Logic]
+  F --> G{Duplicate or Fraud?}
+
+  G -->|True| H[Send Fraud Alert via Telegram]
+  G -->|False| I[Log Order to Google Sheets]
+  I --> J[Send Order Placed - Gmail + Telegram]
+
+  K[Telegram Callback] --> L[Parse Callback Data]
+  L --> M[Fetch Order from Sheet]
+  M --> N[Merge Order Data]
+  N --> O{Owner Decision}
+
+  O -->|Approve| P[Status: Confirmed]
+  O -->|Reject| Q[Status: Rejected]
+  O -->|Fraud| R[Status: Fraud]
+
+  P --> P1[Send Confirmation - Gmail + Telegram]
+  Q --> Q1[Send Rejection - Gmail + Telegram]
+  R --> R1[Send Fraud Message - Gmail + Telegram]
+
+  style G fill:#f9a,stroke:#333
+  style O fill:#f9a,stroke:#333
+```
+
+**Repo:** [From-DM-to-Delivered-Zero-Website-Order-Flow](https://github.com/ubachan/From-DM-to-Delivered-Zero-Website-Order-Flow)
+
+---
+
+### 3. Agentic RAG — Intelligent Knowledge Base
+
+An AI agent that retrieves contextually relevant answers from a custom database using vector search. Built for businesses that need a chatbot trained on their own data — not generic internet knowledge.
 
 **Stack:** n8n · Pinecone · Groq · MongoDB
 
 ```mermaid
 graph TD
   User((User Query)) --> Hook[n8n Webhook]
-  Hook --> Embed[Embedding]
+  Hook --> Embed[Generate Embedding]
   Embed --> Search{Vector Search}
-  Search -- Query --> PDB[(Pinecone/MongoDB)]
-  PDB -- Context --> AI[AI Model]
+  Search -- Query --> PDB[(Pinecone / MongoDB)]
+  PDB -- Retrieved Context --> AI[AI Language Model]
   AI --> Result[Synthesized Answer]
-  Result --> Response[Response]
+  Result --> Response[Return to User]
 
   style Search fill:#f9f,stroke:#333
   style PDB fill:#27272e,stroke:#fff,color:#fff
 ```
 
+**Key Features:**
+- Intent recognition before retrieval
+- Dynamic context injection based on query similarity
+- Low-latency responses via Groq inference
+- Works with any structured or unstructured business data
+
+**Use Case:** Custom AI chatbots for law firms, clinics, and agencies that need to answer questions from their own documents and policies.
+
 ---
 
-### 5. NBGC — Photos to UGC Ads
-An automation pipeline that takes raw product photos and turns them into UGC-style ad content using AI. Built for marketing agencies that produce a high volume of assets.
+### 4. Automated WooCommerce OTP Fraud Prevention
+
+An OTP verification layer for WooCommerce that blocks fake orders before they reach fulfillment. Verifies customer phone numbers at checkout via automated SMS, adds a confirmation step that most fraud bots and fake buyers won't complete.
+
+**Stack:** n8n · WooCommerce · SMS API · Google Sheets
+
+```mermaid
+graph LR
+  A[Customer Places Order] --> B[n8n Webhook Triggered]
+  B --> C[Generate OTP Code]
+  C --> D[Send SMS to Customer Phone]
+  D --> E{OTP Verified?}
+  E -->|Yes| F[Order Confirmed in WooCommerce]
+  E -->|No / Timeout| G[Order Cancelled + Alert]
+  F --> H[Log to Google Sheets]
+
+  style E fill:#f9a,stroke:#333
+```
+
+**Repo:** [Automated-WooCommerce-OTP-Fraud-Prevention-System](https://github.com/ubachan/Automated-WooCommerce-OTP-Fraud-Prevention-System)
+
+---
+
+### 5. AI Logistics Report — Documentation & Validation
+
+An automated pipeline that processes logistics data, validates it against business rules, flags errors, and generates structured reports. Removes the manual spreadsheet work from operations and compliance teams.
+
+**Stack:** n8n · Google Sheets · AI Model · PDF/Doc generation
+
+```mermaid
+graph LR
+  A[Raw Logistics Data] --> B[n8n Trigger]
+  B --> C[Data Validation Layer]
+  C --> D{Passes Rules?}
+  D -->|Yes| E[AI Report Generation]
+  D -->|No| F[Flag Errors + Notify Team]
+  E --> G[Export PDF / Doc]
+  G --> H[Send to Stakeholders]
+
+  style D fill:#f9a,stroke:#333
+```
+
+**Repo:** [AI-Logistics-Report-Documentation-Validation](https://github.com/ubachan/AI-Logistics-Report-Documentation-Validation)
+
+---
+
+### 6. NBGC — Photos to UGC Ads
+
+An automation pipeline that takes raw product photos and turns them into UGC-style ad content using AI vision and copy generation. Built for marketing agencies producing high volumes of creative assets.
 
 **Stack:** n8n · Google Gemini · Cloudflare
 
 ```mermaid
 graph LR
-  A[Raw Photo] --> B[Gemini Vision AI]
-  B --> C[Ad Copy & Design]
-  C --> D[UGC Asset Ready]
+  A[Raw Product Photo] --> B[Gemini Vision Analysis]
+  B --> C[AI Ad Copy Generation]
+  C --> D[Asset Design & Formatting]
+  D --> E[UGC-Ready Ad Asset]
+
   style B fill:#8E75B2,color:#fff
 ```
 
@@ -149,30 +219,55 @@ graph LR
 
 ---
 
-### 6. UreatorFlow — AI Operating Studio
-An AI-powered studio for solo creators to manage their content workflow. Handles planning, scheduling, and distribution in one place.
+### 7. UreatorFlow — AI Operating Studio for Solo Creators
+
+An AI-powered studio that manages the full content workflow for solo creators — planning, scheduling, and distribution in one automated system.
 
 **Stack:** n8n · Supabase · Lovable
+
+```mermaid
+graph LR
+  A[Content Idea Input] --> B[AI Content Planner]
+  B --> C[Schedule & Queue]
+  C --> D[Auto Distribute]
+  D --> E[Facebook]
+  D --> F[Instagram]
+  D --> G[Other Platforms]
+
+  style B fill:#3ECF8E,color:#fff
+```
 
 **Live:** [ureatorflow.pages.dev](https://ureatorflow.pages.dev/)
 
 ---
 
-### 7. Automated WooCommerce OTP Fraud Prevention
-An OTP verification layer for WooCommerce that blocks fake orders before they hit fulfillment. Verifies customer phone numbers at checkout via automated SMS.
+### 8. AI Vibe — Client Intake Automation
 
-**Stack:** n8n · WooCommerce · SMS API
+A consultation form that sends personalized reply emails automatically. When a client submits their request, an AI Agent reads it, writes a tailored email based on their specific service interest, and Gmail delivers it within seconds. No manual follow-up needed.
 
-**Repo:** [Automated-WooCommerce-OTP-Fraud-Prevention-System](https://github.com/ubachan/Automated-WooCommerce-OTP-Fraud-Prevention-System)
+**Stack:** n8n · Google Gemini · Google Sheets · Gmail · Structured Output Parser
+
+```mermaid
+graph LR
+  A[Client Submits Form] --> B[Log to Google Sheets]
+  B --> C[AI Agent Reads Request]
+  C --> D[Structured Output Parser]
+  D --> E[Subject + Body Extracted]
+  E --> F[Gmail Sends Personalized Email]
+
+  style C fill:#8E75B2,color:#fff
+```
+
+**Repo:** [AI-Vibe-Client-Intake-Automation](https://github.com/ubachan/AI-Vibe-Client-Intake-Automation)
 
 ---
 
-### 8. AI Logistics Report Documentation & Validation
-An automated pipeline that processes logistics data, validates it against business rules, and generates structured reports — without anyone touching a spreadsheet.
+## Currently
 
-**Stack:** n8n · Google Sheets · AI Model · PDF/Doc generation
-
-**Repo:** [AI-Logistics-Report-Documentation-Validation](https://github.com/ubachan/AI-Logistics-Report-Documentation-Validation)
+- 🔨 **Building:** [UreatorFlow](https://ureatorflow.pages.dev/) — AI operating studio for solo creators &nbsp;·&nbsp; [NBGC](https://nbgc.pages.dev/) — product photos to UGC ads
+- 📚 **Learning:** Multi-Agent Orchestration and scaling SaaS with n8n + Supabase
+- 🤝 **Open to:** Freelance projects and open-source automation collaboration
+- 💬 **Ask me about:** n8n, AI Agents, Supabase, CRM integrations, Telegram bots
 
 ---
 
