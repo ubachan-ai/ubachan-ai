@@ -39,7 +39,7 @@ An autonomous sales agent for Facebook Messenger that handles the full sales cyc
 **Stack:** n8n · OpenAI · Google Gemini · Supabase · Pinecone · Postgres
 
 ```mermaid
-graph TD
+flowchart TD
   User((User Input)) --> Webhook[n8n Webhook]
   Webhook --> Router{Input Type?}
 
@@ -65,7 +65,7 @@ graph TD
   Agent --> Messenger[FB Messenger Reply]
 
   style Agent fill:#FF6D5A,color:#fff,stroke:#fff
-  style Tools fill:#2D3B45,color:#fff,stroke:#fff
+  style Tools fill:#2D3B45,color:#fff
 ```
 
 **Key Features:**
