@@ -17,7 +17,7 @@ Law firms chasing client intake. E-commerce brands checking payments manually. C
 | Area | What it means in practice |
 | :--- | :--- |
 | **🤖 Custom AI Agents & Chatbots** | Context-aware systems for lead gen, client support, and decision-making — running 24/7 |
-| **⚡ Workflow Automation** | n8n and Zapier pipelines that connect your tools and eliminate repetitive tasks |
+| **⚡ Workflow Automation** | n8n, Zapier & Make.com pipelines that connect your tools and eliminate repetitive tasks |
 | **🔗 CRM Integration** | Pipelines that keep deals moving without someone pushing them |
 | **🌐 Web & SaaS Development** | Production-ready products built around automation from day one |
 | **🗄️ Database & Backend** | Supabase architecture built for scale and real-time performance |
